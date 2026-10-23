@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StopScroll</string>
+    <string name="service_label">StopScroll – blokovanie Reels a Shorts</string>
+    <string name="service_description">Sleduje, či máš otvorené Instagram Reels alebo YouTube Shorts. Keď ich pozeráš dlhšie ako nastavený limit, vráti ťa na domovskú obrazovku. Nečíta tvoje správy ani nič neodosiela – všetko zostáva v telefóne.</string>
+</resources>
