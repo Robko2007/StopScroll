@@ -37,15 +37,24 @@ Ak je v appke zelené **„✅ Služba je zapnutá“**, je hotovo.
 
 ---
 
-## Keď to Reels alebo Shorts nerozpozná
+## Instagram len na správy
+
+Prepínač **„Instagram len na správy“** spraví z Instagramu niečo ako Messenger:
+- keď sa ocitneš na feede, vo vyhľadávaní, v Reels alebo na profile (obrazovky so spodným panelom), appka ťa do 1 sekundy vráti do správ (klikne na lietadielko alebo na kartu správ),
+- zoznam konverzácií a chaty fungujú normálne,
+- fotoaparát, galéria, hovory a ďalšie obrazovky bez spodného panela nechá na pokoji, aby si mohol posielať fotky a volať,
+- reel, ktorý ti niekto pošle, si môžeš pozrieť, ale platí preň bežný limit (predvolene 5 s).
+
+Má aj poistku: keby sa appka zacyklila (napr. po aktualizácii Instagramu nespozná obrazovku správ), po 8 zásahoch za 20 sekúnd sa na minútu pozastaví a ukáže upozornenie.
+
+## Keď niečo nerozpozná (Reels, Shorts alebo správy)
 
 Instagram a YouTube pri aktualizáciách občas premenujú vnútorné časti obrazovky. Appka spoznáva Reels a Shorts podľa týchto názvov (ID).
 
-1. V StopScroll zapni **Režim ladenia**.
-2. Otvor Reels alebo Shorts aspoň na 3 sekundy.
+1. V StopScroll zapni **Režim ladenia**. Ak ladíš správy, režim „len správy“ na ten čas vypni.
+2. Otvor danú obrazovku (Reels, Shorts, zoznam správ alebo chat) aspoň na 3 sekundy.
 3. Vráť sa do StopScroll a klikni na **Kopírovať**.
-4. Medzi ID nájdi niečo, čo vyzerá ako prehrávač (napr. obsahuje `clips`, `reel` alebo `shorts`) a doplň to do zoznamu `IG_IDS` alebo `YT_IDS` v súbore
-   `app/src/main/java/sk/stopscroll/BlockerService.kt`. Potom appku znova zostav.
+4. Medzi ID nájdi niečo, čo tú obrazovku vystihuje (napr. obsahuje `clips`, `reel`, `shorts`, `direct`, `inbox` alebo `thread`). Vpíš ho do sekcie **Pokročilé: vlastné ID** a klikni na **Uložiť ID**. Platí to hneď, appku netreba znova zostavovať.
 
 ## Štruktúra projektu
 

@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
@@ -68,6 +69,27 @@ class MainActivity : Activity() {
             isChecked = prefs.youtubeOn
             setOnCheckedChangeListener { _, on -> prefs.youtubeOn = on }
         }
+        findViewById<Switch>(R.id.swDmOnly).apply {
+            isChecked = prefs.dmOnly
+            setOnCheckedChangeListener { _, on -> prefs.dmOnly = on }
+        }
+
+        // Vlastné ID
+        val edReel = findViewById<EditText>(R.id.edReel)
+        val edShorts = findViewById<EditText>(R.id.edShorts)
+        val edDm = findViewById<EditText>(R.id.edDm)
+        val edInboxBtn = findViewById<EditText>(R.id.edInboxBtn)
+        edReel.setText(prefs.extraReelIds)
+        edShorts.setText(prefs.extraShortsIds)
+        edDm.setText(prefs.extraDmIds)
+        edInboxBtn.setText(prefs.extraInboxBtnIds)
+        findViewById<Button>(R.id.btnSaveIds).setOnClickListener {
+            prefs.extraReelIds = edReel.text.toString().trim()
+            prefs.extraShortsIds = edShorts.text.toString().trim()
+            prefs.extraDmIds = edDm.text.toString().trim()
+            prefs.extraInboxBtnIds = edInboxBtn.text.toString().trim()
+            Toast.makeText(this, "ID uložené – platia hneď", Toast.LENGTH_SHORT).show()
+        }
 
         // Posuvník: 1 až 30 sekúnd
         limitBar.progress = prefs.limitSeconds - 1
@@ -119,7 +141,9 @@ class MainActivity : Activity() {
             btnAccessibility.text = "Zapnúť v nastaveniach prístupnosti"
         }
 
-        stats.text = "Zablokované: ${prefs.blockCount}×\nPosledná udalosť: ${prefs.lastEvent}"
+        stats.text = "Zablokované Reels/Shorts: ${prefs.blockCount}×\n" +
+            "Vrátené do správ: ${prefs.redirectCount}×\n" +
+            "Posledná udalosť: ${prefs.lastEvent}"
 
         val dbgVisible = if (prefs.debugOn) View.VISIBLE else View.GONE
         debugText.visibility = dbgVisible

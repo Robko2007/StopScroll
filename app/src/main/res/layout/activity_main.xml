@@ -82,6 +82,23 @@
             android:text="YouTube Shorts"
             android:textSize="16sp" />
 
+        <Switch
+            android:id="@+id/swDmOnly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="48dp"
+            android:text="Instagram len na správy"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:textSize="13sp"
+            android:text="Feed, vyhľadávanie, Reels a profily ťa hneď vrátia do správ. Fotoaparát, galéria a hovory fungujú normálne." />
+
         <TextView
             android:id="@+id/limitLabel"
             android:layout_width="wrap_content"
@@ -128,7 +145,7 @@
             android:layout_height="wrap_content"
             android:alpha="0.7"
             android:textSize="13sp"
-            android:text="Ak appka Reels/Shorts nerozpozná: zapni ladenie, otvor Reels alebo Shorts aspoň na 3 sekundy, vráť sa sem a skopíruj text nižšie." />
+            android:text="Ak appka niečo nerozpozná: zapni ladenie, otvor danú obrazovku (Reels, Shorts, správy...) aspoň na 3 sekundy, vráť sa sem a skopíruj text nižšie. Pri ladení režimu len správy ho najprv vypni, inak ťa bude presmerúvať." />
 
         <TextView
             android:id="@+id/debugText"
@@ -145,6 +162,63 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kopírovať" />
+
+        <!-- VLASTNÉ ID -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Pokročilé: vlastné ID"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:textSize="13sp"
+            android:text="Doplnia sa k zabudovaným. Oddeľ ich čiarkou. Netreba nič znova inštalovať – stačí Uložiť." />
+
+        <EditText
+            android:id="@+id/edReel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="ID prehrávača Instagram Reels"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edShorts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID prehrávača YouTube Shorts"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edDm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID obrazovky správ (Instagram)"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edInboxBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID tlačidla správ (Instagram)"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnSaveIds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Uložiť ID" />
 
     </LinearLayout>
 </ScrollView>
